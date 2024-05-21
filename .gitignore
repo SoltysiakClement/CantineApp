@@ -1,0 +1,43 @@
+# Laravel-specific directories and files
+/vendor/
+/node_modules/
+/public/storage
+/storage/*.key
+.env
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE and editor files
+.idea/
+/*.iml
+.vscode/
+
+# Ignore log files and personal settings
+*.log
+*.swp
+*.swo
+
+# Ignore compiled files and directories
+/public/hot
+/public/storage
+/storage/debugbar
+/storage/logs
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/testing
+/storage/framework/views
+/storage/clockwork
+
+# Ignore test databases
+Homestead.yaml
+Homestead.json
+
+# Ignore Composer lock file (optional, some teams may prefer to include this)
+/composer.lock
+
+# Ignore npm package lock file
+/package-lock.json
+/pnpm-lock.yaml
+/yarn.lock

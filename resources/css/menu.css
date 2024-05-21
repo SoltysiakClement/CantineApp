@@ -1,0 +1,62 @@
+
+section > div{
+    padding:5vh 5vw ;
+}
+.nav{
+    align-items: center;
+
+}
+.btn-cmd{
+    background-color: #297db9;
+    border-radius: 4px;
+    padding: 3px;
+    margin: 1vh 0vw;
+    color: white;
+    cursor: pointer;
+
+}
+.menu-page{
+    flex-wrap: wrap;
+    gap: 2vw;
+    justify-content: flex-start;
+}
+
+.card-menu{
+    background-color: white;
+    width: 20vw;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.card-menu .card-title{
+    background-color: rgb(221 221 221);
+    border-radius: 5px 5px 0px 0px;
+    text-align: center;
+
+}
+.card-menu .card-tag{
+    font-variant: small-caps;
+    color: #297db9;
+   
+}
+.card-menu .card-tag p{
+    border: 1px solid #297db9;
+    width: fit-content;
+    padding: 2px;
+   
+}
+.card-menu .card-img{
+    max-width: 20vw;
+}
+.card-menu .card-img img{
+    width: 20vw;
+}
+.card-menu .card-price{
+    border-radius: 0 0 5px 5px;
+    gap: 3vw;
+    align-items: center;
+    justify-content: space-around;
+
+}
