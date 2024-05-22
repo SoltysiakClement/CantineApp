@@ -14,7 +14,6 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex nav">
                     <a class="nav-link" href="{{ route('menus') }}">Menus</a>
                     <a class="nav-link" href="/panier">Panier</a>
-                    <a class="nav-link" href="/compte">Mon compte</a>
                 </div>
             </div>
 
@@ -73,9 +72,6 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link href="/panier">
                 Panier
-            </x-responsive-nav-link>
-            <x-responsive-nav-link href="/compte">
-                Mon compte
             </x-responsive-nav-link>
         </div>
 
