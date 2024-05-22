@@ -12,7 +12,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menus = Menu::all();
+        $menus = Menu::paginate(12);
         return view('menus.index', compact('menus'));
     }
 
@@ -55,7 +55,7 @@ class MenuController extends Controller
     {
         $path = $request->file('image')->store('images/menus', 'public');
         $menu->update(['image_path' => $path]);
-    
+
         return back();
     }
 

@@ -17,5 +17,9 @@
         </div>
         @endforeach
     </div>
+
+    <div class="mt-4">
+      {{ $menus->links() }}
+    </div>
 </section>
 @endsection
