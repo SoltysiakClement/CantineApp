@@ -32,20 +32,22 @@
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="ForgotPass">
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
+        </div>
 
+        <div class="flex items-center justify-center mt-4">
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
             </x-primary-button>
              <!-- Ajout du bouton d'inscription -->
              <x-primary-button class="ms-3">
-             <a href="{{ route('register') }}" class="ml-3 inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline btn-sm text-blue-700 bg-blue-100 hover:bg-blue-200">
-                {{ __('Sign Up') }}
+             <a href="{{ route('register') }}" >
+                {{ __('Inscription') }}
            
             </a>
         </x-primary-button>
