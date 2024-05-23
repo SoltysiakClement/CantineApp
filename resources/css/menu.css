@@ -1,62 +1,102 @@
-
-section > div{
-    padding:5vh 5vw ;
+/* Styles pour la section principale */
+section > div {
+    padding: 5vh 5vw;
 }
-.nav{
+
+/* Styles pour la barre de navigation */
+.nav {
     align-items: center;
-
 }
-.btn-cmd{
-    background-color: #297db9;
+
+/* Styles pour le bouton de commande */
+.btn-cmd {
+    background-color: #4a90e2; /* Nouvelle couleur */
     border-radius: 4px;
-    padding: 3px;
-    margin: 1vh 0vw;
+    padding: 10px 20px; /* Augmentation de la taille */
+    margin: 10px 0;
     color: white;
     cursor: pointer;
-
+    border: none; /* Suppression de la bordure */
+    transition: background-color 0.3s ease; /* Animation de transition */
 }
-.menu-page{
+
+/* Changement de couleur au survol */
+.btn-cmd:hover {
+    background-color: #357bd8;
+}
+
+/* Styles pour la liste des menus */
+.menu-page {
+    display: flex;
     flex-wrap: wrap;
     gap: 2vw;
-    justify-content: flex-start;
+    justify-content: space-between; /* Espacement uniforme */
 }
 
-.card-menu{
-    background-color: white;
-    width: 20vw;
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
+/* Styles pour la carte de menu */
+.card-menu {
+    background-color: #ffffff;
+    width: calc(33.33% - 20px); /* Utilisation de calc pour une largeur flexible */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation de transition */
 }
-.card-menu .card-title{
-    background-color: rgb(221 221 221);
-    border-radius: 5px 5px 0px 0px;
+
+/* Effet d'ombre et d'échelle au survol */
+.card-menu:hover {
+    transform: translateY(-5px); /* Décalage vers le haut */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée */
+}
+
+/* Styles pour le titre de la carte */
+.card-menu .card-title {
+    background-color: #f0f0f0; /* Couleur de fond plus claire */
+    border-radius: 8px 8px 0 0; /* Coins arrondis seulement en haut */
     text-align: center;
+    padding: 10px;
+    font-weight: bold; /* Texte en gras */
+}
 
+/* Styles pour la balise de catégorie */
+.card-menu .card-tag {
+    font-size: 14px;
+    color: #4a90e2; /* Nouvelle couleur */
+    margin-top: 10px;
 }
-.card-menu .card-tag{
-    font-variant: small-caps;
-    color: #297db9;
-   
+
+/* Styles pour la description */
+.card-menu .card-description {
+    margin-top: 15px;
+    color: #666666; /* Couleur de texte plus foncée */
 }
-.card-menu .card-tag p{
-    border: 1px solid #297db9;
-    width: fit-content;
-    padding: 2px;
-   
+
+/* Styles pour l'image */
+.card-menu .card-img img {
+    max-width: 100%; /* Image adaptée à la taille de la carte */
+    border-radius: 8px; /* Coins arrondis */
 }
-.card-menu .card-img{
-    max-width: 20vw;
-}
-.card-menu .card-img img{
-    width: 20vw;
-}
-.card-menu .card-price{
-    border-radius: 0 0 5px 5px;
-    gap: 3vw;
+
+/* Styles pour le prix */
+.card-menu .card-price {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
+    font-size: 16px;
+    color: #333333; /* Couleur de texte plus foncée */
+}
 
+/* Réinitialisation des styles du bouton de commande à l'intérieur du prix */
+.card-menu .card-price .btn-cmd {
+    padding: 8px 16px; /* Ajustement de la taille */
+    border-radius: 4px;
+    background-color: #4a90e2; /* Nouvelle couleur */
+    color: white;
+    transition: background-color 0.3s ease; /* Animation de transition */
+}
+
+/* Changement de couleur au survol */
+.card-menu .card-price .btn-cmd:hover {
+    background-color: #357bd8;
 }
