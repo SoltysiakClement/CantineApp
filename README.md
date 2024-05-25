@@ -49,18 +49,57 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[byte5](https://byte5.de)**
 - **[OP.GG](https://op.gg)**
 
+## About This Application
+
+This Laravel application is built with Jetstream to manage users and roles, as well as to provide an authenticated user interface.
+
+## Features
+
+- User management with Jetstream (registration, login, password reset)
+- User roles (standard user and administrator)
+- Creation of menus by administrators
+- Reservation of menus by users
+- Display of reservations in user profile
+- Administration interface for administrators
+
+## Installation
+
+Please refer to the [installation guide](INSTALLATION.md) for detailed instructions on how to install and configure this application.
+
+## Usage
+
+### Administrators
+
+- **DevClem**
+  - Email: devclem@example.com
+  - Password: x14d6ty!gf67gas
+
+- **DevEme**
+  - Email: deveme@example.com
+  - Password: x14d2ty!gh67tas
+
+- **DevReobin**
+  - Email: devreobin@example.com
+  - Password: q14o6!gf67aaas
+
+Log in with one of the administrator accounts to access the administration interface.
+
+### Standard Users
+
+Standard users can sign up and log in to the application to reserve menus.
+
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Thank you for considering contributing to this Laravel application! The contribution guide can be found in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+In order to ensure that the community is welcoming to all, please review and abide by the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this application, please send an email to [admin@example.com](mailto:admin@example.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This Laravel application is open-sourced software licensed under the [MIT license](LICENSE).

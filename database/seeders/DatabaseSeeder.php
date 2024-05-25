@@ -19,6 +19,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Menu::factory(50)->create();
 
         // Crée 100 commandes
-        \App\Models\Commande::factory(100)->create();
+        \App\Models\Reservation::factory(100)->create();
     }
 }

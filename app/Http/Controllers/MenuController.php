@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MenuController extends Controller
 {
@@ -21,7 +23,11 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+        if (!Auth::user()->isAdmin()) {
+            return redirect('/')->with('error', 'Vous n\'avez pas accès à cette page.');
+        }
+        $categories = Category::all();
+        return view('admin.menus.create', compact('categories'));
     }
 
     /**
@@ -29,7 +35,29 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (!Auth::user()->isAdmin()) {
+            return redirect('/')->with('error', 'Vous n\'avez pas accès à cette page.');
+        }
+
+        $request->validate([
+            'nom' => 'required|string|max:255',
+            'category' => 'required|string|max:255',
+            'description' => 'required|string',
+            'prix' => 'required|numeric',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imagePath = $request->file('image')->store('images/menus', 'public');
+
+        Menu::create([
+            'nom' => $request->nom,
+            'category' => $request->category,
+            'description' => $request->description,
+            'prix' => $request->prix,
+            'image_path' => $imagePath,
+        ]);
+
+        return redirect()->route('admin.menus.create')->with('success', 'Menu créé avec succès.');
     }
 
     /**

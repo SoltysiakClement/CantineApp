@@ -13,9 +13,16 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex items-center nav">
                     <a class="nav-link" href="{{ route('menus') }}">Menus</a>
-                    <a class="nav-link" href="/panier">Panier</a>
                 </div>
+                @auth
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex items-center nav">
+                @if(Auth::user()->isAdmin())
+                        <a class="nav-link" href="{{ route('admin.menus.create') }}">Créer un Menu</a>
+                @endif
+                </div>
+            @endauth
             </div>
+          
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -70,9 +77,7 @@
             <x-responsive-nav-link :href="route('menus')" :active="request()->routeIs('menus')">
                 Menus
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="/panier">
-                Panier
-            </x-responsive-nav-link>
+          
         </div>
 
         <!-- Responsive Settings Options -->
