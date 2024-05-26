@@ -41,12 +41,7 @@
             <div class="card-price flex justify-between items-center mt-4">
                 <p class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ $menu->prix }}€</p>
                 <div class="flex space-x-2">
-                    <form action="{{ route('reservations.update', $reservation->id) }}" method="POST">
-                        @csrf
-                        @method('PUT')
-                        <input type="hidden" name="menu_id" value="{{ $menu->id }}">
-                        <button type="submit" class="btn-cmd">Changer</button>
-                    </form>
+                  
                     <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST">
                         @csrf
                         @method('DELETE')

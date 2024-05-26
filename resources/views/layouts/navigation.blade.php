@@ -8,6 +8,8 @@
                     <a href="{{ route('dashboard') }}">
                         CantineApp
                     </a>
+                  
+
                 </div>
 
                 <!-- Navigation Links -->
@@ -23,6 +25,7 @@
             @endauth
             </div>
           
+            @auth
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -57,6 +60,7 @@
                     </x-slot>
                 </x-dropdown>
             </div>
+            @endauth
 
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">

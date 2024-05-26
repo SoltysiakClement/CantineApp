@@ -5,10 +5,14 @@
             {{ __('Profile') }}
         </h2>
     </x-slot>
-    <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+    <div class="p-4 sm:p-8  sm:rounded-lg">
         <div class="max-w-xl">
-            @include('profile.partials.reservations', ['reservations' => $reservations])
+<br>            @include('profile.partials.reservations', ['reservations' => $reservations])
         </div>
+    </div>
+
+    <div class="p-4">
+        <button id="subscribe">S'abonner aux notifications</button>
     </div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
@@ -33,4 +37,9 @@
 
         </div>
     </div>
+    <script>
+        window.VAPID_PUBLIC_KEY = "{{ env('VAPID_PUBLIC_KEY') }}";
+        window.VAPID_PRIVATE_KEY = "{{ env('VAPID_PRIVATE_KEY') }}";
+    </script>
+    
 @endsection

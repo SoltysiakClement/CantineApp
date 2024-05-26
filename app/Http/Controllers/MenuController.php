@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\NewMenuNotification;
+use Illuminate\Support\Facades\Notification;
 
 class MenuController extends Controller
 {
@@ -49,7 +52,7 @@ class MenuController extends Controller
 
         $imagePath = $request->file('image')->store('images/menus', 'public');
 
-        Menu::create([
+        $menu =  Menu::create([
             'nom' => $request->nom,
             'category' => $request->category,
             'description' => $request->description,
@@ -57,6 +60,12 @@ class MenuController extends Controller
             'image_path' => $imagePath,
         ]);
 
+         // Envoyer la notification aux utilisateurs enregistrés
+         $users = User::all();
+         foreach ($users as $user) {
+             $user->notify(new NewMenuNotification($menu));
+         }
+ 
         return redirect()->route('admin.menus.create')->with('success', 'Menu créé avec succès.');
     }
 

@@ -1,7 +1,9 @@
 /* Styles pour la section principale */
+
 section > div {
     padding: 5vh 5vw;
 }
+
 
 /* Styles pour la barre de navigation */
 .nav {

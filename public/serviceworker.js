@@ -1,4 +1,7 @@
+// Nom du cache statique
 var staticCacheName = "pwa-v" + new Date().getTime();
+
+// Fichiers à mettre en cache
 var filesToCache = [
     '/offline',
     '/css/app.css',
@@ -13,7 +16,7 @@ var filesToCache = [
     '/images/icons/icon-512x512.png',
 ];
 
-// Cache on install
+// Cache lors de l'installation
 self.addEventListener("install", event => {
     this.skipWaiting();
     event.waitUntil(
@@ -21,10 +24,10 @@ self.addEventListener("install", event => {
             .then(cache => {
                 return cache.addAll(filesToCache);
             })
-    )
+    );
 });
 
-// Clear cache on activate
+// Nettoyer le cache lors de l'activation
 self.addEventListener('activate', event => {
     event.waitUntil(
         caches.keys().then(cacheNames => {
@@ -38,15 +41,46 @@ self.addEventListener('activate', event => {
     );
 });
 
-// Serve from Cache
+// Intercepter les requêtes réseau et les servir depuis le cache
 self.addEventListener("fetch", event => {
     event.respondWith(
         caches.match(event.request)
             .then(response => {
-                return response || fetch(event.request);
+                // Si la ressource est dans le cache, la renvoyer
+                if (response) {
+                    return response;
+                }
+
+                // Sinon, effectuer une requête réseau
+                return fetch(event.request).then(fetchResponse => {
+                    // Mettre la réponse en cache et la renvoyer
+                    return caches.open(staticCacheName).then(cache => {
+                        cache.put(event.request, fetchResponse.clone());
+                        return fetchResponse;
+                    });
+                });
             })
             .catch(() => {
-                return caches.match('offline');
+                // En cas d'échec, renvoyer une page de secours
+                return caches.match('/offline');
             })
-    )
+    );
+});
+
+// Gérer les notifications push
+self.addEventListener('push', function (event) {
+    const payload = event.data ? event.data.text() : 'New notification';
+
+    event.waitUntil(
+        self.registration.showNotification('CantineApp', {
+            body: payload,
+        })
+    );
+});
+
+// Gérer les clics sur les notifications
+self.addEventListener('notificationclick', function (event) {
+    event.notification.close();
+
+    clients.openWindow('/menus');
 });

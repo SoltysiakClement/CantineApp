@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\PushSubscriptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/menus', [MenuController::class, 'index']) 
-->middleware(['auth', 'verified'])->name('menus');
+->name('menus');
 
 Route::resource('reservations', ReservationController::class)->only(['store', 'update', 'destroy']);
 
@@ -43,5 +44,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('/admin/menus', [MenuController::class, 'store'])->name('admin.menus.store');
 });
 
+Route::get('/offline', function () {
+    return view('offline');
+});
+Route::post('/subscribe', [PushSubscriptionController::class, 'subscribe']);
 
 require __DIR__.'/auth.php';

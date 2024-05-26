@@ -1,5 +1,9 @@
-<x-guest-layout>
-    <div class="max-w-md mx-auto">
+@extends('layouts.app')
+@section('content')
+<section>
+    <br>
+    <br>
+    <div class="max-w-md mx-auto text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
         <h1 class="text-2xl font-bold mb-4">Créer un nouveau menu</h1>
@@ -53,4 +57,5 @@
             </div>
         </form>
     </div>
-</x-guest-layout>
+</section>
+    @endsection
