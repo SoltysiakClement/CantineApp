@@ -138,6 +138,7 @@ php artisan view:clear
 7. **Remplir la base de données**
   ```
     php artisan db:seed
+    php artisan db:seed AdminSeeder
   ```
 
 8. **Lancer le serveur de développement Laravel**
