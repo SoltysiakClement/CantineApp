@@ -82,7 +82,20 @@ L'utilisation de 3 terminaux de commande est recommander.
  Puis placer vous dans le dossier CantineApp 
  ```
    cd CantineApp
-   ```
+ ```
+
+ 1.1 **Assurez vous que dans le dossier Storage/framwork on ai bien les dossiers:**
+  - sessions
+  - views
+  - cache/data
+
+  1.2 **Puis effectuer les commandes suivante:**
+
+```
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+```
 2. **Installer les dépendances PHP**
   ```
     composer update
