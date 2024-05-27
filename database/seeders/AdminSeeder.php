@@ -32,8 +32,8 @@ class AdminSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'DevReobin',
-            'email' => 'devreobin@example.com',
+            'name' => 'DevRobin',
+            'email' => 'devrobin@example.com',
             'password' => Hash::make('q14o6!gf67aaas'),
             'role' => 'admin',
         ]);

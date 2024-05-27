@@ -73,34 +73,74 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants :
 ## Installation et Lancement
 
 Suivez ces étapes pour configurer et lancer l'application :
-
+L'utilisation de 3 terminaux de commande est recommander.
 1. **Cloner le dépôt**
 
   ```
     git clone https://github.com/SoltysiakClement/CantineApp.git
   ```
-
+ Puis placer vous dans le dossier CantineApp 
+ ```
+   cd CantineApp
+   ```
 2. **Installer les dépendances PHP**
   ```
-    Composer update
+    composer update
+  ```
+3. **Publier les dépendances PHP**
+ 
+  ```
+    php artisan vendor:publish
+  ```
+  3.1 **Vous aurais un message comme ceci :**
+  ```
+  Which provider or tag's files would you like to publish?
+  ```
+  **Choisissez l'option suivante :**
+  ```
+   All providers and tags ........................................................................................ 0  
   ```
 
-3. **Compiler les assets**
+4.  **Installer les dependances npm**
+  ```
+    npm install
+  ```
+5. **Compiler les assets**
   ```
     npm run dev
   ```
 
-4. **Créer les tables de la base de données**
+6. **Créer les tables de la base de données**
   ```
     php artisan migrate
   ```
 
-5. **Remplir la base de données**
+7. **Remplir la base de données**
   ```
     php artisan db:seed
   ```
 
-6. **Lancer le serveur de développement Laravel**
+8. **Lancer le serveur de développement Laravel**
   ```
     php artisan serve
+  ```
+9. **Les Migrations et Seeders on ajouter des utilisateur et utilisateur admin**
+    
+    *Ce sont des utilisateurs admin pour la démonstration ils ne sont en aucun cas à garder en production*
+  ```
+            'name' => 'DevClem',
+            'email' => 'devclem@example.com',
+            'password' => Hash::make('x14d6ty!gf67gas'),
+            'role' => 'admin',
+
+            'name' => 'DevEme',
+            'email' => 'deveme@example.com',
+            'password' => Hash::make('x14d2ty!gh67tas'),
+            'role' => 'admin',
+       
+            'name' => 'DevRobin',
+            'email' => 'devrobin@example.com',
+            'password' => Hash::make('q14o6!gf67aaas'),
+            'role' => 'admin',
+      
   ```
