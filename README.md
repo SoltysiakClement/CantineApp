@@ -3,7 +3,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants :
 - Composer
 - Node.js & npm
 
-## Modifier ou créer un fichier .env
+## Modifier ou créer un fichier .env une fois que vous avez clonez le projet et que vous étes à la racine
   ```
     APP_NAME=Laravel
     APP_ENV=local
