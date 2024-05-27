@@ -76,8 +76,9 @@ Suivez ces étapes pour configurer et lancer l'application :
 
 1. **Cloner le dépôt**
 
-   ```sh
-   git clone https://github.com/SoltysiakClement/CantineApp.git
+  ```
+    git clone https://github.com/SoltysiakClement/CantineApp.git
+  ```
 
 2. **Installer les dépendances PHP**
    ```
