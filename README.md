@@ -76,30 +76,31 @@ Suivez ces étapes pour configurer et lancer l'application :
 
 1. **Cloner le dépôt**
 
-   ```sh
-   git clone https://github.com/SoltysiakClement/CantineApp.git
+  ```
+    git clone https://github.com/SoltysiakClement/CantineApp.git
+  ```
 
 2. **Installer les dépendances PHP**
-   ```
+  ```
     Composer update
   ```
 
-2. **Compiler les assets**
+3. **Compiler les assets**
   ```
     npm run dev
   ```
 
-3. **Créer les tables de la base de données**
+4. **Créer les tables de la base de données**
   ```
     php artisan migrate
   ```
 
-4. **Remplir la base de données**
+5. **Remplir la base de données**
   ```
     php artisan db:seed
   ```
 
-5. **Lancer le serveur de développement Laravel**
+6. **Lancer le serveur de développement Laravel**
   ```
     php artisan serve
   ```
