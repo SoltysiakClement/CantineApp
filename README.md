@@ -124,6 +124,13 @@ php artisan view:clear
   ```
 
 6. **Créer les tables de la base de données**
+6.1 **Pour commencer : il faut  créer un fichier database.sqlite**
+
+*Une fois fait changer dans le .env DB_DATABASE par votre chemin*  
+```
+=C:\Users\Remplacer\Remplacer\Remplacer\Remplacer\Remplacer\Remplacer\Remplacer\Remplacer\cantineApp\database\database.sqlite
+```  
+6.2 **Lancer les migration afin d'avoir les table de la bdd**
   ```
     php artisan migrate
   ```
