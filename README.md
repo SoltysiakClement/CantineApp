@@ -1,4 +1,4 @@
-Il s'agit d'une petit PWA de cantine d'entreprise en Laravel
+Il s'agit d'une petite PWA de cantine d'entreprise en Laravel
 
 Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
