@@ -1,105 +1,105 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+- Composer
+- Node.js & npm
 
-## About Laravel
+## Modifier ou créer un fichier .env
+  ```
+    APP_NAME=Laravel
+    APP_ENV=local
+    APP_KEY=base64:j8L+ddFKcdPEOi5srnM+ma1yxBmISQ7z/ntcl9Fd7SY=
+    APP_DEBUG=true
+    APP_URL=http://localhost
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    LOG_CHANNEL=stack
+    LOG_DEPRECATIONS_CHANNEL=null
+    LOG_LEVEL=debug
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+    DB_CONNECTION=sqlite
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=C:\Users\solty\Desktop\prive\alternance\2emeAnnee\Ecole\PWA\CantinePwa\cantineApp\database\database.sqlite
+    DB_USERNAME=root
+    DB_PASSWORD=
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    BROADCAST_DRIVER=log
+    CACHE_DRIVER=file
+    FILESYSTEM_DISK=local
+    QUEUE_CONNECTION=sync
+    SESSION_DRIVER=file
+    SESSION_LIFETIME=120
 
-## Learning Laravel
+    MEMCACHED_HOST=127.0.0.1
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    REDIS_HOST=127.0.0.1
+    REDIS_PASSWORD=null
+    REDIS_PORT=6379
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+    MAIL_MAILER=smtp
+    MAIL_HOST=mailpit
+    MAIL_PORT=1025
+    MAIL_USERNAME=null
+    MAIL_PASSWORD=null
+    MAIL_ENCRYPTION=null
+    MAIL_FROM_ADDRESS="hello@example.com"
+    MAIL_FROM_NAME="${APP_NAME}"
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    AWS_ACCESS_KEY_ID=
+    AWS_SECRET_ACCESS_KEY=
+    AWS_DEFAULT_REGION=us-east-1
+    AWS_BUCKET=
+    AWS_USE_PATH_STYLE_ENDPOINT=false
 
-## Laravel Sponsors
+    PUSHER_APP_ID=
+    PUSHER_APP_KEY=
+    PUSHER_APP_SECRET=
+    PUSHER_HOST=
+    PUSHER_PORT=443
+    PUSHER_SCHEME=https
+    PUSHER_APP_CLUSTER=mt1
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    VITE_APP_NAME="${APP_NAME}"
+    VITE_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+    VITE_PUSHER_HOST="${PUSHER_HOST}"
+    VITE_PUSHER_PORT="${PUSHER_PORT}"
+    VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
+    VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+  ```
 
-### Premium Partners
+  Il faut changer le chemin de la base de donnée 
+  DB_DATABASE=C:\Users\solty\Desktop\prive\alternance\2emeAnnee\Ecole\PWA\CantinePwa\cantineApp\database\database.sqlite
+  par votre chemin
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Installation et Lancement
 
-## About This Application
+Suivez ces étapes pour configurer et lancer l'application :
 
-This Laravel application is built with Jetstream to manage users and roles, as well as to provide an authenticated user interface.
+1. **Cloner le dépôt**
 
-## Features
+   ```sh
+   git clone https://github.com/SoltysiakClement/CantineApp.git
 
-- User management with Jetstream (registration, login, password reset)
-- User roles (standard user and administrator)
-- Creation of menus by administrators
-- Reservation of menus by users
-- Display of reservations in user profile
-- Administration interface for administrators
+2. **Installer les dépendances PHP**
+   ```
+    Composer update
+  ```
 
-## Installation
+2. **Compiler les assets**
+  ```
+    npm run dev
+  ```
 
-Please refer to the [installation guide](INSTALLATION.md) for detailed instructions on how to install and configure this application.
+3. **Créer les tables de la base de données**
+  ```
+    php artisan migrate
+  ```
 
-## Usage
+4. **Remplir la base de données**
+  ```
+    php artisan db:seed
+  ```
 
-### Administrators
-
-- **DevClem**
-  - Email: devclem@example.com
-  - Password: x14d6ty!gf67gas
-
-- **DevEme**
-  - Email: deveme@example.com
-  - Password: x14d2ty!gh67tas
-
-- **DevReobin**
-  - Email: devreobin@example.com
-  - Password: q14o6!gf67aaas
-
-Log in with one of the administrator accounts to access the administration interface.
-
-### Standard Users
-
-Standard users can sign up and log in to the application to reserve menus.
-
-## Contributing
-
-Thank you for considering contributing to this Laravel application! The contribution guide can be found in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
-
-## Code of Conduct
-
-In order to ensure that the community is welcoming to all, please review and abide by the [Code of Conduct](CODE_OF_CONDUCT.md).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within this application, please send an email to [admin@example.com](mailto:admin@example.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-This Laravel application is open-sourced software licensed under the [MIT license](LICENSE).
+5. **Lancer le serveur de développement Laravel**
+  ```
+    php artisan serve
+  ```
