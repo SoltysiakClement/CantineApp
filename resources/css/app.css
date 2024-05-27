@@ -4,3 +4,6 @@
 section {
     margin-top: 5vh;
 }
+.p-4.sm\:p-8.sm\:rounded-lg {
+    padding-top: 50px!important;
+}
